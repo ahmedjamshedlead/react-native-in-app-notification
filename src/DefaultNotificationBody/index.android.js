@@ -27,8 +27,9 @@ const styles = {
     marginLeft: 20,
   },
   title: {
-    color: '#000',
+    color: 'red',
     fontWeight: 'bold',
+    fontSize: 16,
   },
   message: {
     color: '#000',
@@ -85,12 +86,9 @@ class DefaultNotificationBody extends React.Component {
           underlayColor="transparent"
           onPress={this.onNotificationPress}
         >
-          <View style={styles.iconContainer}>
-            {(icon || iconApp) && <Image source={icon || iconApp} style={styles.icon} />}
-          </View>
           <View style={styles.textContainer}>
             <Text numberOfLines={1} style={styles.title}>{title}</Text>
-            <Text numberOfLines={1} style={styles.message}>{message}</Text>
+            <Text numberOfLines={3} style={styles.message}>{message}</Text>
           </View>
         </TouchableOpacity>
       </GestureRecognizer>
