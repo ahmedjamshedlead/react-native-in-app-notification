@@ -7,7 +7,7 @@ import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures'
 const styles = {
   root: {
     flex: 1,
-    backgroundColor: '#050505',
+    backgroundColor: '#FFF',
   },
   container: {
     position: 'absolute',
@@ -40,11 +40,12 @@ const styles = {
     marginLeft: 20,
   },
   title: {
-    color: '#FFF',
+    color: 'red',
     fontWeight: 'bold',
+    fontSize: 16,
   },
   message: {
-    color: '#FFF',
+    color: '#000',
     marginTop: 5,
   },
   footer: {
@@ -119,10 +120,9 @@ class DefaultNotificationBody extends React.Component {
             underlayColor="transparent"
             onPress={this.onNotificationPress}
           >
-            {this.renderIcon()}
             <View style={styles.textContainer}>
               <Text numberOfLines={1} style={styles.title}>{title}</Text>
-              <Text numberOfLines={1} style={styles.message}>{message}</Text>
+              <Text numberOfLines={3} style={styles.message}>{message}</Text>
             </View>
           </TouchableOpacity>
 
