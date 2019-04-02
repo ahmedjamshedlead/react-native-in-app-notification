@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, StyleSheet, Image } from 'react-native';
+import { Animated, StyleSheet, Image, StatusBar, Platform } from 'react-native';
 import { getStatusBarHeight, isIphoneX } from 'react-native-iphone-x-helper';
 
 import DefaultNotificationBody from './DefaultNotificationBody';
@@ -82,6 +82,8 @@ class Notification extends Component {
   }
 
   showNotification(done) {
+    if(Platform.OS === "android")
+      StatusBar.setBackgroundColor('#FFF')
     Animated.timing(this.state.animatedValue, {
       toValue: 1,
       duration: this.props.openCloseDuration,
@@ -89,6 +91,8 @@ class Notification extends Component {
   }
 
   closeNotification(done) {
+    if(Platform.OS === "android")
+      StatusBar.setBackgroundColor('#df0047')
     Animated.timing(this.state.animatedValue, {
       toValue: 0,
       duration: this.props.openCloseDuration,
